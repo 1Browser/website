@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: var(--font-sans);
+}
+
+* {
+	cursor: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjQxIiB2aWV3Qm94PSIwIDAgNTMgNDEiIHdpZHRoPSI1MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGZpbHRlciBpZD0iYSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGhlaWdodD0iMjEuMTMwOSIgd2lkdGg9IjIwLjEwODQiIHg9Ii41OTI3NzMiIHk9Ii4yNjE3MTkiPjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+PGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9ImhhcmRBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIi8+PGZlT2Zmc2V0IGR5PSIxIi8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMS41Ii8+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPjxmZUJsZW5kIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiBtb2RlPSJub3JtYWwiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93XzMwOV8xMjU4NiIvPjxmZUJsZW5kIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd18zMDlfMTI1ODYiIG1vZGU9Im5vcm1hbCIgcmVzdWx0PSJzaGFwZSIvPjwvZmlsdGVyPjxmaWx0ZXIgaWQ9ImIiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBoZWlnaHQ9IjI4IiB3aWR0aD0iNDQiIHg9IjkiIHk9IjEyLjkxOCI+PGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz48ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0iaGFyZEFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiLz48ZmVPZmZzZXQgZHk9IjEiLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxLjUiLz48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMC4yNSAwIi8+PGZlQmxlbmQgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIG1vZGU9Im5vcm1hbCIgcmVzdWx0PSJlZmZlY3QxX2Ryb3BTaGFkb3dfMzA5XzEyNTg2Ii8+PGZlQmxlbmQgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iZWZmZWN0MV9kcm9wU2hhZG93XzMwOV8xMjU4NiIgbW9kZT0ibm9ybWFsIiByZXN1bHQ9InNoYXBlIi8+PC9maWx0ZXI+PGcgZmlsdGVyPSJ1cmwoI2EpIj48cGF0aCBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Im0xNS4xOCA4LjYyNDg2LTEwLjE4LTQuNjI0ODYgMi40MDc3MyAxMC45MTgxIDIuOTQyMDctNC4zMTI0eiIgZmlsbD0iI2JlOGZmYyIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0ibTE1LjM2OTcgOS4wODc0NyAxLjA3MDgtLjQzOTE0LTEuMDUzNy0uNDc4Ny0xMC4xNzk5OS00LjYyNDg1LS45MTA0My0uNDEzNjIuMjE1MzUuOTc2NTIgMi40MDc3MyAxMC45MTgwMi4yNDkxOCAxLjEzLjY1MjEyLS45NTU4IDIuODU3NTQtNC4xODg1eiIgc3Ryb2tlPSIjZmZmIi8+PC9nPjxnIGZpbHRlcj0idXJsKCNiKSI+PHJlY3QgZmlsbD0iI2JlOGZmYyIgaGVpZ2h0PSIyMiIgcng9IjExIiB3aWR0aD0iMzgiIHg9IjEyIiB5PSIxNC45MTgiLz48cmVjdCBoZWlnaHQ9IjIxIiByeD0iMTAuNSIgc3Ryb2tlPSIjZmZmIiB3aWR0aD0iMzciIHg9IjEyLjUiIHk9IjE1LjQxOCIvPjxwYXRoIGQ9Im0yNS44MzU5IDIzLjY5MjRjLS4zMDc2IDEuMDA0OS0yLjQ1NDEgNy4xMDk0LTIuNDYwOSA3LjEyOTlsLS4xODQ2LjQ5OWMtLjU5NDcgMS41OTk2LTEuMzk0NSAyLjEzMjgtMi44MDI3IDIuMTMyOC0uMjY2NiAwLS41ODc5LS4wMjczLS43OTk4LS4wNjg0di0xLjE0ODRjLjExNjIuMDIwNS4zNTU1LjAzNDIuNTUzNy4wMzQyLjgyMDMgMCAxLjIxLS4yNzM1IDEuMzY3Mi0uOTg0NGwuMDg4OS0uMzE0NC0yLjU3NzItNy4yODAzaDEuNjgxNmwxLjcyOTUgNS43NDIyaC4wNDc5bDEuNzUtNS43NDIyem00LjE0MjMtLjEyMzFjMi4wNzgyIDAgMy4yMDYxIDEuNDYyOSAzLjIwNjEgMy40MzE3di41ODFjMCAyLjAzNzEtMS4xMjExIDMuNDU5LTMuMjA2MSAzLjQ1OS0yLjA4NDkgMC0zLjIxOTctMS40MjE5LTMuMjE5Ny0zLjQ1OXYtLjU4MWMwLTEuOTYxOSAxLjE0MTYtMy40MzE3IDMuMjE5Ny0zLjQzMTd6bTAgMS4yMTY4Yy0xLjEyNzkgMC0xLjY4ODQuOTIyOS0xLjY4ODQgMi4yMzU0di41NTM3YzAgMS4yOTIuNTUzNyAyLjI0MjIgMS42ODg0IDIuMjQyMiAxLjEzNDggMCAxLjY4MTctLjk0MzQgMS42ODE3LTIuMjQyMnYtLjU1MzdjMC0xLjMxOTQtLjU1MzctMi4yMzU0LTEuNjgxNy0yLjIzNTR6bTExLjE5MDItMS4wOTM3djcuMjI1NmgtMS40OTAydi0xLjAwNDloLS4wNjg0Yy0uMjM5My41Njc0LS45MDkyIDEuMTE0Mi0yLjA4NSAxLjExNDItMS40ODM0IDAtMi41MDg3LS44NTQ0LTIuNTA4Ny0yLjUyOTN2LTQuODA1NmgxLjUxNzV2NC4zODg3YzAgMS4yNjQ2LjcyNDYgMS42MzM3IDEuNTM4MSAxLjYzMzcuOTA5MiAwIDEuNTc5MS0uNTgxIDEuNTc5MS0xLjY1NDN2LTQuMzY4MXoiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+"),
+		auto !important;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	.neon-glow {
+		text-shadow: 0 0 5px rgba(138, 43, 226, 0.7),
+			0 0 10px rgba(138, 43, 226, 0.5), 0 0 15px rgba(138, 43, 226, 0.3);
+	}
+
+	.glass-effect {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+}
+
+@layer base {
+	:root {
+		--background: 230 50% 5%;
+		--foreground: 210 40% 85%;
+		--card: 230 50% 8%;
+		--card-foreground: 210 40% 98%;
+		--popover: 230 50% 8%;
+		--popover-foreground: 210 40% 98%;
+		--primary: 271 76% 53%;
+		--primary-light: 271 76% 70%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 270 59% 58%;
+		--secondary-foreground: 210 40% 98%;
+		--muted: 230 50% 20%;
+		--muted-foreground: 210 40% 70%;
+		--accent: 310 79% 58%;
+		--accent-foreground: 210 40% 98%;
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 230 50% 30%;
+		--input: 230 50% 16%;
+		--ring: 199 89% 48%;
+		--chart-1: 199 89% 48%;
+		--chart-2: 270 59% 58%;
+		--chart-3: 310 79% 58%;
+		--chart-4: 35 89% 58%;
+		--chart-5: 150 79% 48%;
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 230 50% 5%;
+		--foreground: 210 40% 98%;
+		--card: 230 50% 8%;
+		--card-foreground: 210 40% 98%;
+		--popover: 230 50% 8%;
+		--popover-foreground: 210 40% 98%;
+		--primary: 271 76% 53%;
+		--primary-light: 271 76% 70%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 270 59% 58%;
+		--secondary-foreground: 210 40% 98%;
+		--muted: 230 50% 20%;
+		--muted-foreground: 210 40% 70%;
+		--accent: 310 79% 58%;
+		--accent-foreground: 210 40% 98%;
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 230 50% 30%;
+		--input: 230 50% 16%;
+		--ring: 199 89% 48%;
+		--chart-1: 199 89% 48%;
+		--chart-2: 270 59% 58%;
+		--chart-3: 310 79% 58%;
+		--chart-4: 35 89% 58%;
+		--chart-5: 150 79% 48%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+		background-image: radial-gradient(
+				circle at top right,
+				rgba(var(--primary), 0.1) 0%,
+				transparent 60%
+			),
+			radial-gradient(
+				circle at bottom left,
+				rgba(var(--secondary), 0.1) 0%,
+				transparent 60%
+			);
+		background-attachment: fixed;
+	}
+}
