@@ -3,11 +3,13 @@ import React from "react";
 export function BrowserFrame({
 	defaultUrl = "https://example.com",
 	content,
+	sidePanelWidth,
 	sidePanel,
 }: {
 	defaultUrl: string;
 	content: React.ReactNode;
 	sidePanel?: React.ReactNode;
+	sidePanelWidth?: number;
 }) {
 	return (
 		<div className="w-full h-full bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
@@ -34,7 +36,10 @@ export function BrowserFrame({
 			<div className="flex h-[calc(100%-3rem)]">
 				{content}
 				{sidePanel && (
-					<div className="bg-gray-800 border-l border-gray-700 overflow-auto min-w-[200px]">
+					<div
+						className="bg-gray-800 border-l border-gray-700 overflow-auto min-w-[200px]"
+						style={{ width: sidePanelWidth }}
+					>
 						{sidePanel}
 					</div>
 				)}

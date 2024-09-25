@@ -7,12 +7,13 @@ export function FeatureAiSummaryDemo() {
 			defaultUrl="https://openinformation.io/"
 			content={
 				<iframe
-					src="https://arc.net/l/quote/mkdgcyrw"
-					className="w-full h-full border-none"
+					src="https://openinformation.io/"
+					className="flex-grow w-full h-[850px] border-none"
 				/>
 			}
+			sidePanelWidth={500}
 			sidePanel={
-				<div className="p-6 text-white bg-gradient-to-br from-indigo-900 to-purple-900 rounded-lg shadow-lg w-[400px]">
+				<div className="p-6 text-white bg-gradient-to-br from-indigo-900 to-purple-900 rounded-lg shadow-lg">
 					<div>
 						<h2 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
 							AI Summary
