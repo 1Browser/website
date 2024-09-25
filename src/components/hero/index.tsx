@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
 						</span>
 					</m.h1>
 					<m.div
-						className="text-md md:text-2xl text-foreground mb-12 max-w-3xl"
+						className="text-md md:text-2xl text-foreground mb-12 max-w-3xl my-8"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
