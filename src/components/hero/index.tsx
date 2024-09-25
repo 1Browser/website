@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -34,10 +34,10 @@ export const Hero: React.FC = () => {
 				))}
 			</div>
 
-			<div className="container mx-auto px-6 py-24 mt-24 relative z-10">
+			<div className="container mx-auto px-6 py-24 mt-4 md:mt-24 relative z-10">
 				<div className="flex flex-col items-center text-center">
 					<m.h1
-						className="text-6xl md:text-8xl font-extrabold mb-6"
+						className="text-5xl md:text-8xl font-extrabold mb-6"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
 						</span>
 					</m.h1>
 					<m.div
-						className="text-xl md:text-2xl text-foreground mb-12 max-w-3xl"
+						className="text-md md:text-2xl text-foreground mb-12 max-w-3xl"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
@@ -145,6 +145,8 @@ export const Hero: React.FC = () => {
 					></div>
 				</div>
 			</m.div>
+
+			<ScrollToSeeMore />
 		</section>
 	);
 };
@@ -158,5 +160,55 @@ function FeatureText({ text, color }: { text: string; color: string }) {
 		>
 			{text}
 		</m.span>
+	);
+}
+
+function ScrollToSeeMore() {
+	const [scrollY, setScrollY] = useState(0);
+
+	useEffect(() => {
+		const handleScroll = () => setScrollY(window.scrollY);
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const opacity = 1 - Math.min(scrollY / 500, 1);
+
+	return (
+		<m.div
+			className="absolute bottom-20 w-full flex flex-col items-center"
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: opacity, y: 0 }}
+			transition={{ duration: 0.8, delay: 1.2 }}
+			style={{ opacity }}
+		>
+			<p className="text-sm mx-auto text-gray-400 mb-2">scroll to the future</p>
+			<m.div
+				animate={{
+					y: [0, 10, 0],
+				}}
+				transition={{
+					duration: 1.5,
+					repeat: Infinity,
+					ease: "easeInOut",
+				}}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					className="text-gray-400"
+				>
+					<path d="M6 9l6 6 6-6" />
+					<path d="M6 15l6 6 6-6" />
+				</svg>
+			</m.div>
+		</m.div>
 	);
 }

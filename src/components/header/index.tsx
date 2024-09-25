@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useState } from "react";
 
 export function Header() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	return (
 		<header className="sticky top-0 z-50 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white/30 text-foreground">
 			<div className="container mx-auto px-4 py-3">
@@ -23,7 +26,16 @@ export function Header() {
 						<span className="text-2xl font-bold">1Browser</span>
 					</Link>
 
-					<nav>
+					{/* Hamburger menu for mobile */}
+					<button
+						className="md:hidden"
+						onClick={() => setIsMenuOpen(!isMenuOpen)}
+					>
+						{isMenuOpen ? "✕" : "☰"}
+					</button>
+
+					{/* Navigation for desktop */}
+					<nav className="hidden md:block">
 						<ul className="flex items-center gap-6">
 							<li>
 								<Link href="/features" className="hover:underline">
@@ -48,8 +60,40 @@ export function Header() {
 						</ul>
 					</nav>
 
-					<Button>Join Waitlist</Button>
+					{/* Button for desktop */}
+					<Button className="hidden md:inline-flex">Join Waitlist</Button>
 				</div>
+
+				{/* Mobile menu */}
+				{isMenuOpen && (
+					<nav className="md:hidden mt-4">
+						<ul className="flex flex-col gap-4">
+							<li>
+								<Link href="/features" className="hover:underline">
+									Features
+								</Link>
+							</li>
+							<li>
+								<Link href="/pricing" className="hover:underline">
+									Pricing
+								</Link>
+							</li>
+							<li>
+								<Link href="/about" className="hover:underline">
+									About
+								</Link>
+							</li>
+							<li>
+								<Link href="/contact" className="hover:underline">
+									Contact
+								</Link>
+							</li>
+							<li>
+								<Button className="w-full">Join Waitlist</Button>
+							</li>
+						</ul>
+					</nav>
+				)}
 			</div>
 		</header>
 	);

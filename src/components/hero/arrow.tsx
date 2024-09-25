@@ -18,7 +18,7 @@ const draw = {
 
 export const Arrow: React.FC = () => {
 	return (
-		<div className="relative">
+		<div className="relative hidden md:block">
 			<m.svg
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
