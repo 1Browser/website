@@ -18,13 +18,13 @@ const draw = {
 
 export const Arrow: React.FC = () => {
 	return (
-		<div>
+		<div className="relative">
 			<m.svg
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 89.83773642923416 126.6305831280774"
-				width="179.6754728584683"
-				height="253.2611662561548"
+				width="100"
+				height="250"
 				initial="hidden"
 				animate="visible"
 			>
@@ -62,14 +62,16 @@ export const Arrow: React.FC = () => {
 				</m.g>
 			</m.svg>
 
-			<m.p
-				initial={{ opacity: 0, x: 100, y: 10 }}
-				animate={{ opacity: 1, x: 90, y: -10 }}
-				transition={{ delay: 3, duration: 1, type: "spring" }}
-				className="text-2xl italic w-[350px] text-center"
-			>
-				open and intelligent <br /> information consumption
-			</m.p>
+			<div className="absolute bottom-[0%] left-[0%]">
+				<m.p
+					initial={{ opacity: 0, x: 50, y: 10 }}
+					animate={{ opacity: 1, x: 40, y: -10 }}
+					transition={{ delay: 3, duration: 1, type: "spring" }}
+					className="text-2xl italic w-[350px] text-center"
+				>
+					open and intelligent <br /> information consumption
+				</m.p>
+			</div>
 		</div>
 	);
 };
