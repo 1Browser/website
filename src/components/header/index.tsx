@@ -9,7 +9,7 @@ export function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<header className="sticky top-0 z-50 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white/30 text-foreground">
+		<header className="sticky top-0 z-50 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white/10 text-foreground">
 			<div className="container mx-auto px-4 py-3">
 				<div className="flex items-center justify-between">
 					<Link
@@ -21,7 +21,7 @@ export function Header() {
 							alt="1Browser logo"
 							width={40}
 							height={40}
-							className="rounded-full bg-white p-1"
+							className="rounded-full"
 						/>
 						<span className="text-2xl font-bold">1Browser</span>
 					</Link>

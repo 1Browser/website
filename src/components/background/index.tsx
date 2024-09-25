@@ -1,19 +1,57 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { m, useMotionValue, useSpring } from "framer-motion";
 import noisePng from "./noise.png";
 
 const Background: React.FC = () => {
 	const svgRef = useRef<SVGSVGElement>(null);
+	const [isScrolling, setIsScrolling] = useState(false);
+	const scrollSpeedMultiplier = useMotionValue(1);
+	const smoothScrollSpeedMultiplier = useSpring(scrollSpeedMultiplier, {
+		damping: 20,
+		stiffness: 100,
+	});
+
+	useEffect(() => {
+		let scrollTimeout: NodeJS.Timeout;
+		let lastScrollTop = window.pageYOffset;
+
+		const handleScroll = () => {
+			const currentScrollTop = window.pageYOffset;
+			const scrollSpeed = Math.abs(currentScrollTop - lastScrollTop);
+			lastScrollTop = currentScrollTop;
+
+			setIsScrolling(true);
+			scrollSpeedMultiplier.set(1 + scrollSpeed * 0.01);
+
+			clearTimeout(scrollTimeout);
+			scrollTimeout = setTimeout(() => {
+				setIsScrolling(false);
+				scrollSpeedMultiplier.set(1);
+			}, 150);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			clearTimeout(scrollTimeout);
+		};
+	}, []);
 
 	useEffect(() => {
 		const animate = () => {
 			if (svgRef.current) {
 				const time = Date.now() * 0.0001;
 				const filters = svgRef.current.querySelectorAll("feTurbulence");
+				const currentSpeedMultiplier = smoothScrollSpeedMultiplier.get();
+
 				filters.forEach((filter, index) => {
-					const baseFrequencyX = 0.01 + Math.sin(time + index) * 0.005;
-					const baseFrequencyY = 0.01 + Math.cos(time + index) * 0.005;
+					const baseFrequencyX =
+						(0.01 + Math.sin(time + index) * 0.005) * currentSpeedMultiplier;
+					const baseFrequencyY =
+						(0.01 + Math.cos(time + index) * 0.005) * currentSpeedMultiplier;
 					filter.setAttribute(
 						"baseFrequency",
 						`${baseFrequencyX} ${baseFrequencyY}`
