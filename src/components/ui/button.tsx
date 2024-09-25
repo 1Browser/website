@@ -49,11 +49,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			<Comp
 				className={cn(buttonVariants({ variant, size, className }))}
 				ref={ref}
-				whileTap={{ scale: 0.9 }}
+				whileTap={{ scale: 0.98 }}
 				whileHover={{
+					scale: 1.05,
 					boxShadow: "0 0 15px rgba(var(--primary-rgb), 0.5)",
 				}}
-				transition={{ type: "spring", stiffness: 400, damping: 10 }}
 				{...props}
 			/>
 		);

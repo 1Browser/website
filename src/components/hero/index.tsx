@@ -8,32 +8,7 @@ import { Arrow } from "./arrow";
 
 export const Hero: React.FC = () => {
 	return (
-		<section className="relative min-h-screen overflow-hidden">
-			{/* Animated background elements */}
-			<div className="absolute inset-0 opacity-20">
-				{[...Array(20)].map((_, i) => (
-					<m.div
-						key={i}
-						className="absolute bg-white rounded-full"
-						style={{
-							width: Math.random() * 5 + "px",
-							height: Math.random() * 5 + "px",
-							top: Math.random() * 100 + "%",
-							left: Math.random() * 100 + "%",
-						}}
-						animate={{
-							y: [0, -100],
-							opacity: [0, 1, 0],
-						}}
-						transition={{
-							duration: Math.random() * 5 + 5,
-							repeat: Infinity,
-							ease: "linear",
-						}}
-					/>
-				))}
-			</div>
-
+		<section className="relative min-h-screen overflow-x-hidden">
 			<div className="container mx-auto px-6 py-24 mt-4 md:mt-24 relative z-10">
 				<div className="flex flex-col items-center text-center">
 					<m.h1
@@ -130,21 +105,12 @@ export const Hero: React.FC = () => {
 				</div>
 			</div>
 
-			{/* Futuristic 3D element */}
-			<m.div
-				className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl"
-				initial={{ y: 100, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				transition={{ duration: 1, delay: 0.6 }}
-			>
-				<div className="relative w-full h-64">
-					<div className="absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent rounded-t-full opacity-30"></div>
-					<div
-						className="absolute inset-0 bg-gradient-to-t from-blue-400 to-transparent rounded-t-full opacity-40"
-						style={{ clipPath: "inset(25% 12.5% 0 12.5%)" }}
-					></div>
-				</div>
-			</m.div>
+			{/* Futuristic 3D elements */}
+			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+				{[...Array(5)].map((_, index) => (
+					<FuturisticShape key={index} />
+				))}
+			</div>
 
 			<ScrollToSeeMore />
 		</section>
@@ -211,4 +177,94 @@ function ScrollToSeeMore() {
 			</m.div>
 		</m.div>
 	);
+}
+
+const FuturisticShape: React.FC = () => {
+	const shapes = ["square", "triangle", "circle", "hexagon"];
+	const colors = [
+		"rgb(96, 165, 250)", // blue-400
+		"rgb(244, 114, 182)", // pink-400
+		"rgb(192, 132, 252)", // purple-400
+		"rgb(74, 222, 128)", // green-400
+		"rgb(250, 204, 21)", // yellow-400
+	];
+
+	const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+	const randomColor = colors[Math.floor(Math.random() * colors.length)];
+	const randomSize = Math.floor(Math.random() * (100 - 40 + 1) + 40);
+	const randomPosition = {
+		width: randomSize,
+		height: randomSize,
+		top: `${Math.random() * 100}%`,
+		left: `${Math.random() * 100}%`,
+	};
+
+	const randomStartX = Math.floor(Math.random() * 360);
+	const randomStartY = Math.floor(Math.random() * 360);
+	const randomStartZ = Math.floor(Math.random() * 360);
+	const randomOpacity = Math.random() * 0.5 + 0.1; // Adjust opacity range
+
+	return (
+		<m.div
+			className="absolute"
+			style={randomPosition}
+			animate={{
+				x: [0, Math.random() * 100 - 50], // Random horizontal movement
+				y: [0, Math.random() * 100 - 50], // Random vertical movement
+				rotateX: [randomStartX, randomStartX + 360],
+				rotateY: [randomStartY, randomStartY + 360],
+				rotateZ: [randomStartZ, randomStartZ + 360],
+				opacity: [randomOpacity, randomOpacity / 2, randomOpacity],
+			}}
+			transition={{
+				duration: Math.random() * 10 + 20, // Longer duration for slower movement
+				ease: "easeInOut",
+				repeat: Infinity,
+				repeatType: "reverse",
+			}}
+		>
+			<svg className="w-full h-full" viewBox="0 0 100 100">
+				<defs>
+					<filter id={`glow-${randomColor.replace(/[^a-zA-Z0-9]/g, "")}`}>
+						<feGaussianBlur stdDeviation="3" result="coloredBlur" />
+						<feMerge>
+							<feMergeNode in="coloredBlur" />
+							<feMergeNode in="coloredBlur" />
+							<feMergeNode in="coloredBlur" />
+							<feMergeNode in="SourceGraphic" />
+						</feMerge>
+					</filter>
+				</defs>
+				{getShapePath(randomShape, randomColor)}
+			</svg>
+		</m.div>
+	);
+};
+
+function getShapePath(shape: string, color: string): JSX.Element {
+	const commonProps = {
+		fill: "none",
+		stroke: color,
+		strokeWidth: "4",
+		filter: `url(#glow-${color.replace(/[^a-zA-Z0-9]/g, "")})`,
+		opacity: 0.7,
+	};
+
+	switch (shape) {
+		case "square":
+			return <rect x="10" y="10" width="80" height="80" {...commonProps} />;
+		case "triangle":
+			return <polygon points="50,10 10,90 90,90" {...commonProps} />;
+		case "circle":
+			return <circle cx="50" cy="50" r="40" {...commonProps} />;
+		case "hexagon":
+			return (
+				<polygon
+					points="50,10 90,30 90,70 50,90 10,70 10,30"
+					{...commonProps}
+				/>
+			);
+		default:
+			return <rect x="10" y="10" width="80" height="80" {...commonProps} />;
+	}
 }

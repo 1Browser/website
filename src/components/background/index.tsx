@@ -75,6 +75,7 @@ const Background: React.FC = () => {
 				backgroundImage: `url(${noisePng.src})`,
 			}}
 		>
+			<Sparks />
 			<svg
 				className="fixed inset-0 w-full h-full opacity-50"
 				ref={svgRef}
@@ -110,5 +111,33 @@ const Background: React.FC = () => {
 		</div>
 	);
 };
+
+function Sparks() {
+	return (
+		<div className="fixed inset-0 opacity-20 -z-0 pointer-events-none">
+			{[...Array(50)].map((_, i) => (
+				<m.div
+					key={i}
+					className="absolute bg-white rounded-full"
+					style={{
+						width: Math.random() * 5 + "px",
+						height: Math.random() * 5 + "px",
+						top: Math.random() * 100 + "%",
+						left: Math.random() * 100 + "%",
+					}}
+					animate={{
+						y: [0, -100],
+						opacity: [0, 1, 0],
+					}}
+					transition={{
+						duration: Math.random() * 5 + 5,
+						repeat: Infinity,
+						ease: "linear",
+					}}
+				/>
+			))}
+		</div>
+	);
+}
 
 export default Background;

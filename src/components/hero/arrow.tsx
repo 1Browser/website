@@ -64,8 +64,8 @@ export const Arrow: React.FC = () => {
 
 			<div className="absolute bottom-[0%] left-[0%]">
 				<m.p
-					initial={{ opacity: 0, x: 50, y: 10 }}
-					animate={{ opacity: 1, x: 40, y: -10 }}
+					initial={{ opacity: 0, x: 50, y: 10, scale: 0.5 }}
+					animate={{ opacity: 1, x: 40, y: -10, scale: 1 }}
 					transition={{ delay: 3, duration: 1, type: "spring" }}
 					className="text-2xl italic w-[350px] text-center"
 				>

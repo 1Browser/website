@@ -48,7 +48,7 @@ export default function RootLayout({
 				<Providers>
 					<Background />
 					<Header />
-					{children}
+					<main className="mx-auto">{children}</main>
 				</Providers>
 			</body>
 		</html>
