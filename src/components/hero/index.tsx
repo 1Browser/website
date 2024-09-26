@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.4 }}
 						>
-							<Button size="lg">Join Waitlist</Button>
+							<JoinWaitlist />
 						</m.div>
 
 						<m.div
@@ -117,6 +117,20 @@ export const Hero: React.FC = () => {
 		</section>
 	);
 };
+
+function JoinWaitlist() {
+	return (
+		<Button
+			onClick={() => {
+				// rick roll
+				window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+			}}
+			size="lg"
+		>
+			Join Waitlist
+		</Button>
+	);
+}
 
 function FeatureText({ text, color }: { text: string; color: string }) {
 	return (

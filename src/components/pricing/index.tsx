@@ -133,7 +133,16 @@ export function Pricing() {
 									))}
 								</ul>
 							</div>
-							<ShinyButton>Get Started</ShinyButton>
+							<div
+								className="w-full my-8 flex justify-center"
+								onClick={() => {
+									// rick roll
+									window.location.href =
+										"https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+								}}
+							>
+								<ShinyButton>Get Started</ShinyButton>
+							</div>
 						</m.div>
 					))}
 				</div>
