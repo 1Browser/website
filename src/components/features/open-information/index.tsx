@@ -16,24 +16,24 @@ export function FeatureOpenInformation() {
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title={<HyperText text="Steganography - Anti-Censorship" />}
-						description="Censorship is bullsh*t. Here is the built-in steganography to hide information in plain sight. No more worrying about censorship. Share information openly."
+						description="Censorship is bullsh*t. Here is the built-in steganography to encode and decode information in plain sight. No more worrying about censorship. Share information openly."
 						demo={<SteganographyDemo />}
 					/>
 					<BentoCard
-						title="Web3 Enhancement"
-						description="Web3 is the future. But it is not there yet. We have built-in Web3 enchancement to make your Web3 experience smoother. For example, automatically show hex address info (with this owner's profile), etc. Data powered by RSS3."
+						title="Crypto Enhancement"
+						description="Crypto will be everywhere. But it is not there yet. We have built-in crypto enchancement to make your Web3 experience smoother. For example, automatically show hex address info (with this owner's profile), etc. Data powered by RSS3."
 						demo={<Web3EnhancementDemo />}
 					/>
 				</div>
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title="Decentralized Identities of Ownership"
-						description="Show ownership of the website. Show your identity to the viewer and get rewarded by them for your contribution to the Internet of open information."
+						description="Display the owner of the website. Show your identity to the viewer and earn rewards by them for your contribution to the Internet of open information."
 						demo={<DIDDemo />}
 					/>
 					<BentoCard
 						title="$POWER Token Sponsorship"
-						description="Show your support for open information by sponsoring $POWER token. Gain visibility and get rewarded by the community."
+						description="Show your support for open information by tipping $POWER token. Gain visibility and get rewarded by the community."
 						demo={<SponsorDemo />}
 					/>
 				</div>
