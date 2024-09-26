@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { m, AnimatePresence } from "framer-motion";
@@ -83,7 +83,9 @@ export function Deck() {
 
 	const imageIndex = ((page % images.length) + images.length) % images.length;
 
-	const nextImageIndex = useRef((imageIndex + 1) % images.length);
+	const [nextImageIndex, setNextImageIndex] = useState(
+		(imageIndex + 1) % images.length
+	);
 
 	const paginate = useCallback(
 		(newDirection: number) => {
@@ -97,7 +99,7 @@ export function Deck() {
 	};
 
 	useEffect(() => {
-		nextImageIndex.current = (imageIndex + 1) % images.length;
+		setNextImageIndex((imageIndex + 1) % images.length);
 	}, [imageIndex]);
 
 	useEffect(() => {
@@ -150,15 +152,13 @@ export function Deck() {
 						<Image
 							src={images[imageIndex]}
 							alt={`Slide ${imageIndex + 1}`}
-							layout="fill"
-							objectFit="cover"
 							onClick={() => paginate(1)}
-							className="cursor-pointer"
+							className="cursor-pointer object-cover"
 						/>
+						<ImagePreloader src={images[nextImageIndex]} />
 					</m.div>
 				</AnimatePresence>
 				<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50" />
-				<ImagePreloader src={images[nextImageIndex.current]} />
 			</div>
 			<div className="flex items-center space-x-6">
 				<m.button
@@ -208,5 +208,5 @@ export function Deck() {
 }
 
 function ImagePreloader({ src }: { src: string | StaticImageData }) {
-	return <Image src={src} alt="Preload" layout="fill" className="hidden" />;
+	return <Image src={src} alt="Preload" className="hidden" />;
 }

@@ -61,9 +61,9 @@ export function Team() {
 								<Image
 									src={member.image}
 									alt={member.name}
-									layout="fill"
-									objectFit="cover"
-									className="transition-transform duration-300 hover:scale-110"
+									fill
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+									className="transition-transform duration-300 hover:scale-110 object-cover"
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-violet-900 to-transparent opacity-70"></div>
 							</div>
