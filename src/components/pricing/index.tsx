@@ -3,6 +3,7 @@
 import { IconCheck } from "@tabler/icons-react";
 import { m } from "framer-motion";
 import ShinyButton from "../magicui/shiny-button";
+import { useState } from "react";
 
 const tiers = [
 	{
@@ -33,8 +34,10 @@ const tiers = [
 ];
 
 export function Pricing() {
+	const [isYearly, setIsYearly] = useState(true);
+
 	return (
-		<section className="bg-gradient-to-b from-gray-900 to-black py-24 sm:py-32">
+		<section className="bg-gradient-to-b py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-4xl text-center">
 					<h2 className="text-base font-semibold leading-7 text-indigo-400">
@@ -48,6 +51,27 @@ export function Pricing() {
 					Unlock the full potential of AI-powered browsing with our flexible
 					pricing options.
 				</p>
+
+				<div className="flex justify-center mt-8">
+					<div className="relative flex items-center bg-white/10 rounded-full p-1">
+						<button
+							className={`${
+								!isYearly ? "bg-indigo-500 text-white" : "text-gray-300"
+							} relative rounded-full py-2 px-4 text-sm font-semibold transition-all duration-300 focus:outline-none`}
+							onClick={() => setIsYearly(false)}
+						>
+							Monthly
+						</button>
+						<button
+							className={`${
+								isYearly ? "bg-indigo-500 text-white" : "text-gray-300"
+							} relative rounded-full py-2 px-4 text-sm font-semibold transition-all duration-300 focus:outline-none`}
+							onClick={() => setIsYearly(true)}
+						>
+							Yearly
+						</button>
+					</div>
+				</div>
 
 				<div className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none">
 					{tiers.map((tier, tierIdx) => (
@@ -74,21 +98,26 @@ export function Pricing() {
 										? "For the true open information enthusiasts"
 										: "For professionals and teams"}
 								</p>
-								<p className="mt-6 flex items-baseline gap-x-1">
-									<span className="text-4xl font-bold tracking-tight text-white">
-										${tier.price.monthly}
-									</span>
-									<span className="text-sm font-semibold leading-6 text-gray-300">
-										/month
-									</span>
-								</p>
-								<p className="mt-1 text-sm leading-6 text-gray-300">
-									or ${tier.price.yearly}/year (save{" "}
-									{Math.round(
-										(1 - tier.price.yearly / (tier.price.monthly * 12)) * 100
+								<div className="flex items-end gap-x-2">
+									<p className="mt-6 flex items-baseline gap-x-1">
+										<span className="text-4xl font-bold tracking-tight text-white">
+											${isYearly ? tier.price.yearly : tier.price.monthly}
+										</span>
+										<span className="text-sm font-semibold leading-6 text-gray-300">
+											/{isYearly ? "year" : "month"}
+										</span>
+									</p>
+									{isYearly && (
+										<p className="mt-1 text-sm leading-6 text-gray-300">
+											Save{" "}
+											{Math.round(
+												(1 - tier.price.yearly / (tier.price.monthly * 12)) *
+													100
+											)}
+											%
+										</p>
 									)}
-									%)
-								</p>
+								</div>
 								<ul
 									role="list"
 									className="mt-8 space-y-3 text-sm leading-6 text-gray-300"
