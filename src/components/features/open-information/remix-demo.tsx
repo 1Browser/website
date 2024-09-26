@@ -8,7 +8,6 @@ import {
 	IconBrandDiscord,
 	IconBrandTelegram,
 	IconBrandInstagram,
-	IconDotsVertical,
 	IconWand,
 	IconSend,
 	IconLoader2,

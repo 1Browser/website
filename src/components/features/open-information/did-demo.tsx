@@ -1,5 +1,4 @@
 import { BrowserFrame } from "@/components/browser-frame";
-import Image from "next/image";
 
 export function DIDDemo() {
 	return (

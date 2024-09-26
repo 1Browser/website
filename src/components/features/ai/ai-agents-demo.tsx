@@ -4,18 +4,17 @@ import React, { useState, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { BrowserFrame } from "../../browser-frame";
 
+const steps = [
+	"Analyzing user preferences",
+	"Searching for ideal shoe",
+	"Adding to cart",
+	"Applying best discount",
+	"Completing checkout",
+];
 export function AiAgentsDemo() {
 	const [step, setStep] = useState(0);
 	const [isComplete, setIsComplete] = useState(false);
 	const [currentUrl, setCurrentUrl] = useState("https://ai-shoe-store.com");
-
-	const steps = [
-		"Analyzing user preferences",
-		"Searching for ideal shoe",
-		"Adding to cart",
-		"Applying best discount",
-		"Completing checkout",
-	];
 	useEffect(() => {
 		const interval = setInterval(() => {
 			if (step <= steps.length - 1) {
@@ -28,13 +27,13 @@ export function AiAgentsDemo() {
 		}, 3000);
 
 		return () => clearInterval(interval);
-	}, []);
+	}, [step]);
 
 	useEffect(() => {
 		if (step > steps.length - 1 && !isComplete) {
 			setIsComplete(true);
 		}
-	}, [step]);
+	}, [isComplete, step]);
 
 	useEffect(() => {
 		// reset the step to 0

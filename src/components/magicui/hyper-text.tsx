@@ -31,7 +31,6 @@ export default function HyperText({
 	loopInterval = 3000, // Default 3 seconds between loops
 }: HyperTextProps) {
 	const [displayText, setDisplayText] = useState(text.split(""));
-	const [trigger, setTrigger] = useState(false);
 	const interations = useRef(0);
 	const isFirstRender = useRef(true);
 
@@ -46,7 +45,6 @@ export default function HyperText({
 			}
 
 			interations.current = 0;
-			setTrigger(true);
 
 			interval = setInterval(() => {
 				if (interations.current < text.length) {
@@ -62,7 +60,6 @@ export default function HyperText({
 					interations.current = interations.current + 0.1;
 				} else {
 					clearInterval(interval);
-					setTrigger(false);
 
 					// Schedule the next animation
 					timeout = setTimeout(animate, loopInterval);

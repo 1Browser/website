@@ -117,7 +117,6 @@ function EncryptedText() {
 
 	useEffect(() => {
 		const characters = "01!@#$%^&*()_+-=[]{}|;:,.<>?";
-		let interval: NodeJS.Timeout;
 
 		const generateText = () => {
 			let newText = "";
@@ -127,7 +126,7 @@ function EncryptedText() {
 			setText(newText);
 		};
 
-		interval = setInterval(generateText, 50);
+		const interval = setInterval(generateText, 50);
 		return () => clearInterval(interval);
 	}, []);
 

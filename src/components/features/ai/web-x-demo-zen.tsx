@@ -123,7 +123,7 @@ export function WebXDemoZen() {
 							<span className="mr-2">🤖</span> AI Insight of the Moment
 						</h2>
 						<p className="text-lg">
-							1Browser's AI has detected a surge in user productivity. Web
+							1Browser&apos;s AI has detected a surge in user productivity. Web
 							browsing efficiency has increased by 42% among 1Browser users,
 							with seamless tab management and AI-powered content suggestions
 							leading the charge.

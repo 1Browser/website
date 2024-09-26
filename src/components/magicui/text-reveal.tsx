@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, ReactNode, useRef, useMemo } from "react";
-import { m as motion, useScroll, useTransform } from "framer-motion";
+import { m as motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -21,7 +21,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
 		offset: ["start end", "end center"],
 	});
 
-	const pArr = Array.isArray(text) ? text : [text];
+	const pArr = useMemo(() => Array.isArray(text) ? text : [text], [text]);
 
 	// Calculate total word count
 	const totalWords = useMemo(() => {
@@ -72,7 +72,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
 
 interface WordProps {
 	children: ReactNode;
-	progress: any;
+	progress: MotionValue<number>;
 	range: [number, number];
 }
 

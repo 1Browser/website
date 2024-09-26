@@ -1,41 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { BrowserFrame } from "@/components/browser-frame";
 
+const steps = [
+	"Browse article",
+	"Collect text",
+	"Collect image",
+	"Collect video",
+	"Collect audio",
+	"View collected items",
+];
 export function CollectDemo() {
 	const [step, setStep] = useState(0);
 	const [currentUrl, setCurrentUrl] = useState("https://example.com/article");
 	const [collectedItems, setCollectedItems] = useState<string[]>([]);
 
-	const steps = [
-		"Browse article",
-		"Collect text",
-		"Collect image",
-		"Collect video",
-		"Collect audio",
-		"View collected items",
-	];
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setStep((prevStep) => (prevStep + 1) % steps.length);
-		}, 5000); // Increased duration to allow for animations
-
-		return () => clearInterval(interval);
-	}, []);
-
-	useEffect(() => {
-		updateUrl(step);
-		if (step > 0 && step < 5) {
-			setCollectedItems((prev) => [...prev, steps[step].split(" ")[1]]);
-		} else if (step === 0) {
-			setCollectedItems([]);
-		}
-	}, [step]);
-
-	const updateUrl = (newStep: number) => {
+	const updateUrl = useCallback((newStep: number) => {
 		switch (newStep) {
 			case 0:
 				setCurrentUrl("https://example.com/article");
@@ -52,7 +34,24 @@ export function CollectDemo() {
 				setCurrentUrl("https://example.com/second-brain");
 				break;
 		}
-	};
+	}, []);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setStep((prevStep) => (prevStep + 1) % steps.length);
+		}, 5000); // Increased duration to allow for animations
+
+		return () => clearInterval(interval);
+	}, []);
+
+	useEffect(() => {
+		updateUrl(step);
+		if (step > 0 && step < 5) {
+			setCollectedItems((prev) => [...prev, steps[step].split(" ")[1]]);
+		} else if (step === 0) {
+			setCollectedItems([]);
+		}
+	}, [step, updateUrl]);
 
 	return (
 		<BrowserFrame

@@ -26,12 +26,12 @@ const aiResponse = `Based on your collected information this week:
 
 Overall, it seems you're exploring various aspects of AI, from practical applications to ethical considerations, while also working on your own project ideas.`;
 
+const steps = ["Idle", "Enter query", "AI processing", "View response"];
+
 export function AskAIDemo() {
 	const [step, setStep] = useState(0);
 	const [query, setQuery] = useState("");
 	const [displayedResponse, setDisplayedResponse] = useState("");
-
-	const steps = ["Idle", "Enter query", "AI processing", "View response"];
 
 	useEffect(() => {
 		const interval = setInterval(() => {

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
-// @ts-ignore
+// @ts-expect-error Idk
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { BrowserFrame } from "@/components/browser-frame";
 import {

@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { m, useMotionValue, useSpring } from "framer-motion";
 import noisePng from "./noise.png";
 
 const Background: React.FC = () => {
 	const svgRef = useRef<SVGSVGElement>(null);
-	const [isScrolling, setIsScrolling] = useState(false);
 	const scrollSpeedMultiplier = useMotionValue(1);
 	const smoothScrollSpeedMultiplier = useSpring(scrollSpeedMultiplier, {
 		damping: 20,
@@ -22,12 +21,10 @@ const Background: React.FC = () => {
 			const scrollSpeed = Math.abs(currentScrollTop - lastScrollTop);
 			lastScrollTop = currentScrollTop;
 
-			setIsScrolling(true);
 			scrollSpeedMultiplier.set(1 + scrollSpeed * 0.001);
 
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => {
-				setIsScrolling(false);
 				scrollSpeedMultiplier.set(1);
 			}, 150);
 		};
@@ -38,7 +35,7 @@ const Background: React.FC = () => {
 			window.removeEventListener("scroll", handleScroll);
 			clearTimeout(scrollTimeout);
 		};
-	}, []);
+	}, [scrollSpeedMultiplier]);
 
 	useEffect(() => {
 		const animate = () => {
@@ -66,7 +63,7 @@ const Background: React.FC = () => {
 		return () => {
 			cancelAnimationFrame(requestAnimationFrame(animate));
 		};
-	}, []);
+	}, [smoothScrollSpeedMultiplier]);
 
 	return (
 		<div

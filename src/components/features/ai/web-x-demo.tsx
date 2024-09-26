@@ -189,7 +189,7 @@ export function WebXDemo() {
 			{/* Right Sidebar */}
 			<aside className="w-80 border-l border-gray-700 p-4 sticky top-0 h-screen">
 				<div className="bg-gray-900 rounded-lg p-4 mb-4">
-					<h2 className="font-bold mb-2">What's happening</h2>
+					<h2 className="font-bold mb-2">What&apos;s happening</h2>
 					<ul className="space-y-2">
 						<li>#Trending1</li>
 						<li>#Trending2</li>

@@ -10,7 +10,6 @@ import {
 	IconLoader2,
 	IconBrain,
 	IconWand,
-	IconRobot,
 	IconSparkles,
 	IconChevronRight,
 } from "@tabler/icons-react";

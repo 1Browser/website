@@ -9,6 +9,7 @@ import {
 	BackgroundVariant,
 	EdgeTypes,
 	getBezierPath,
+	type EdgeProps,
 } from "@xyflow/react";
 
 const nodeStyles = {
@@ -138,10 +139,9 @@ const CustomEdge = ({
 	targetY,
 	sourcePosition,
 	targetPosition,
-	style = {},
 	data,
 	markerEnd,
-}: any) => {
+}: EdgeProps) => {
 	const [edgePath] = getBezierPath({
 		sourceX,
 		sourceY,
@@ -155,7 +155,7 @@ const CustomEdge = ({
 		<path
 			d={edgePath}
 			fill="none"
-			className={`${data.className} animate-pulse`}
+			className={`${data?.className} animate-pulse`}
 			markerEnd={markerEnd}
 		/>
 	);

@@ -5,6 +5,7 @@ import { Providers } from "@/components/providers";
 import { Header } from "@/components/header";
 import Background from "@/components/background";
 import { Toaster } from "@/components/ui/toaster";
+import { Footer } from "@/components/footer";
 
 const sans = localFont({
 	src: [
@@ -50,6 +51,7 @@ export default function RootLayout({
 					<Background />
 					<Header />
 					<main className="mx-auto">{children}</main>
+					<Footer />
 					<Toaster />
 				</Providers>
 			</body>

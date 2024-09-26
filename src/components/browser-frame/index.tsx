@@ -24,7 +24,8 @@ export function BrowserFrame({
 	const didCardRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		if (!enableDidCard || !browserFrameRef.current) return;
+		const dom = browserFrameRef.current;
+		if (!enableDidCard || !dom) return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -39,11 +40,11 @@ export function BrowserFrame({
 			}
 		);
 
-		observer.observe(browserFrameRef.current);
+		observer.observe(dom);
 
 		return () => {
-			if (browserFrameRef.current) {
-				observer.unobserve(browserFrameRef.current);
+			if (dom) {
+				observer.unobserve(dom);
 			}
 		};
 	}, [enableDidCard]);
