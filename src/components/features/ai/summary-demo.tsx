@@ -1,15 +1,16 @@
 import { BrowserFrame } from "@/components/browser-frame";
 import { ReactFlow } from "@xyflow/react";
+import { OpenInformationWebpage } from "./open-info-webpage";
+import { AIInput } from "../input/ai-input";
 
 export function FeatureAiSummaryDemo() {
 	return (
 		<BrowserFrame
 			defaultUrl="https://openinformation.io/"
 			content={
-				<iframe
-					src="https://openinformation.io/"
-					className="flex-grow w-full h-[850px] border-none"
-				/>
+				<div className="overflow-auto h-[850px]">
+					<OpenInformationWebpage />
+				</div>
 			}
 			sidePanelWidth={500}
 			sidePanel={
@@ -51,8 +52,6 @@ export function FeatureAiSummaryDemo() {
 		/>
 	);
 }
-
-import { AIInput } from "../input/ai-input";
 
 const initialNodes = [
 	{

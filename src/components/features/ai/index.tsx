@@ -13,7 +13,7 @@ export function FeatureAi() {
 			<div className="flex flex-col gap-5">
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
-						title="Smart Summarization"
+						title="Smart Reading Companion"
 						description="AI lives in the browser sidebar. Always there. It beautifully summarizes the webpage and extracts the key points for you."
 						demo={<FeatureAiSummaryDemo />}
 					/>

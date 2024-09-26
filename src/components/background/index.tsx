@@ -23,7 +23,7 @@ const Background: React.FC = () => {
 			lastScrollTop = currentScrollTop;
 
 			setIsScrolling(true);
-			scrollSpeedMultiplier.set(1 + scrollSpeed * 0.01);
+			scrollSpeedMultiplier.set(1 + scrollSpeed * 0.001);
 
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => {
@@ -49,9 +49,9 @@ const Background: React.FC = () => {
 
 				filters.forEach((filter, index) => {
 					const baseFrequencyX =
-						(0.01 + Math.sin(time + index) * 0.005) * currentSpeedMultiplier;
+						(0.01 + Math.sin(time + index) * 0.0005) * currentSpeedMultiplier;
 					const baseFrequencyY =
-						(0.01 + Math.cos(time + index) * 0.005) * currentSpeedMultiplier;
+						(0.01 + Math.cos(time + index) * 0.0005) * currentSpeedMultiplier;
 					filter.setAttribute(
 						"baseFrequency",
 						`${baseFrequencyX} ${baseFrequencyY}`
@@ -93,7 +93,7 @@ const Background: React.FC = () => {
 							baseFrequency="0.01"
 							numOctaves="3"
 						/>
-						<feDisplacementMap in="SourceGraphic" scale="50" />
+						<feDisplacementMap in="SourceGraphic" scale="60" />
 					</filter>
 					<filter id="noise2">
 						<feTurbulence
@@ -101,7 +101,7 @@ const Background: React.FC = () => {
 							baseFrequency="0.015"
 							numOctaves="4"
 						/>
-						<feDisplacementMap in="SourceGraphic" scale="40" />
+						<feDisplacementMap in="SourceGraphic" scale="50" />
 					</filter>
 				</defs>
 				<rect width="100%" height="100%" fill="url(#grad1)" />

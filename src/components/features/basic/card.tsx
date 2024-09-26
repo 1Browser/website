@@ -24,10 +24,16 @@ export function BentoCard({
 				className
 			)}
 		>
-			<div className="p-6">
-				{demo && <div className="mb-4">{demo}</div>}
-				<h3 className="text-4xl font-semibold text-foreground mb-2">{title}</h3>
-				<p className="text-secondary-foreground">{description}</p>
+			<div className="p-6 flex flex-col justify-between h-full">
+				{demo && (
+					<div className="mb-4 flex justify-center items-center">{demo}</div>
+				)}
+				<div>
+					<h3 className="text-4xl font-semibold text-foreground mb-2">
+						{title}
+					</h3>
+					<p className="text-secondary-foreground">{description}</p>
+				</div>
 			</div>
 		</m.div>
 	);

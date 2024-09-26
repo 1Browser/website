@@ -9,7 +9,7 @@ export function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<header className="sticky top-0 z-50 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white/10 text-foreground">
+		<header className="sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-white/10 text-foreground">
 			<div className="container mx-auto px-4 py-3">
 				<div className="flex items-center justify-between">
 					<Link

@@ -138,9 +138,9 @@ export function WebXDemoZen() {
 								className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-0.5 group hover:from-cyan-400 hover:to-pink-600 transition-all duration-300"
 							>
 								<div className="bg-gray-800 bg-opacity-50 h-full rounded-2xl p-4 backdrop-blur-sm">
-									<h3 className="font-bold mb-2">
+									<p className="font-bold my-2">
 										1Browser Enthusiast {friend.id}
-									</h3>
+									</p>
 									<p className="text-sm opacity-80 group-hover:opacity-100 transition-opacity my-2">
 										{friend.content}
 									</p>
