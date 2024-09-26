@@ -48,6 +48,11 @@ export function Header() {
 								</Link>
 							</li>
 							<li>
+								<Link href="/deck" className="hover:underline">
+									Deck
+								</Link>
+							</li>
+							<li>
 								<Link href="/contact" className="hover:underline">
 									Contact
 								</Link>

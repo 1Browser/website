@@ -46,6 +46,11 @@ export function Footer() {
 						</h3>
 						<ul className="mt-4 space-y-2">
 							<li>
+								<Link href="/deck" className="hover:text-white transition">
+									Deck
+								</Link>
+							</li>
+							<li>
 								<Link href="/contact" className="hover:text-white transition">
 									Contact
 								</Link>
