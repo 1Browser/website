@@ -38,18 +38,13 @@ export function Header() {
 					<nav className="hidden md:block">
 						<ul className="flex items-center gap-6">
 							<li>
-								<Link href="/features" className="hover:underline">
-									Features
+								<Link href="/" className="hover:underline">
+									Intro
 								</Link>
 							</li>
 							<li>
 								<Link href="/pricing" className="hover:underline">
 									Pricing
-								</Link>
-							</li>
-							<li>
-								<Link href="/about" className="hover:underline">
-									About
 								</Link>
 							</li>
 							<li>
