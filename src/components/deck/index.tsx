@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import { useState, useEffect, useCallback, useRef } from "react";
+import Image, { type StaticImageData } from "next/image";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { m, AnimatePresence } from "framer-motion";
 
@@ -83,6 +83,8 @@ export function Deck() {
 
 	const imageIndex = ((page % images.length) + images.length) % images.length;
 
+	const nextImageIndex = useRef((imageIndex + 1) % images.length);
+
 	const paginate = useCallback(
 		(newDirection: number) => {
 			setPage([page + newDirection, newDirection]);
@@ -93,6 +95,10 @@ export function Deck() {
 	const toggleAutoPlay = () => {
 		setIsAutoPlaying((prev) => !prev);
 	};
+
+	useEffect(() => {
+		nextImageIndex.current = (imageIndex + 1) % images.length;
+	}, [imageIndex]);
 
 	useEffect(() => {
 		let interval: NodeJS.Timeout;
@@ -152,6 +158,7 @@ export function Deck() {
 					</m.div>
 				</AnimatePresence>
 				<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50" />
+				<ImagePreloader src={images[nextImageIndex.current]} />
 			</div>
 			<div className="flex items-center space-x-6">
 				<m.button
@@ -198,4 +205,8 @@ export function Deck() {
 			</div>
 		</div>
 	);
+}
+
+function ImagePreloader({ src }: { src: string | StaticImageData }) {
+	return <Image src={src} alt="Preload" layout="fill" className="hidden" />;
 }
