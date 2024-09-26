@@ -208,5 +208,5 @@ export function Deck() {
 }
 
 function ImagePreloader({ src }: { src: string | StaticImageData }) {
-	return <Image src={src} alt="Preload" className="hidden" />;
+	return <Image src={src} alt="Preload" className="opacity-0" />;
 }
