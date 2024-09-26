@@ -39,7 +39,7 @@ function SteganographyDemoContent() {
 				<Comment
 					author="FreedomFighter"
 					content={
-						<AnimatePresence mode="wait">
+						<AnimatePresence mode="popLayout">
 							{revealed ? (
 								<m.span
 									key="revealed"

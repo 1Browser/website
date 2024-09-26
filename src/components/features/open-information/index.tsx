@@ -4,6 +4,8 @@ import { SteganographyDemo } from "./steganography-demo";
 import { Web3EnhancementDemo } from "./web3-enhancement-demo";
 import { DIDDemo } from "./did-demo";
 import { SponsorDemo } from "./sponsor-demo";
+import { RemixDemo } from "./remix-demo";
+import HyperText from "@/components/magicui/hyper-text";
 
 export function FeatureOpenInformation() {
 	return (
@@ -13,7 +15,7 @@ export function FeatureOpenInformation() {
 			<div className="flex flex-col gap-5">
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
-						title="Steganography - Anti-Censorship"
+						title={<HyperText text="Steganography - Anti-Censorship" />}
 						description="Censorship is bullsh*t. Here is the built-in steganography to hide information in plain sight. No more worrying about censorship. Share information openly."
 						demo={<SteganographyDemo />}
 					/>
@@ -33,6 +35,13 @@ export function FeatureOpenInformation() {
 						title="$POWER Token Sponsorship"
 						description="Show your support for open information by sponsoring $POWER token. Gain visibility and get rewarded by the community."
 						demo={<SponsorDemo />}
+					/>
+				</div>
+				<div className="flex flex-col gap-4 md:flex-row">
+					<BentoCard
+						title="Remix and Share on Any Platform"
+						description='See a good resources on the Internet? "Remix" it and publish on any platform with one click. This is the future of information sharing. Effortlessly remix with the help of your Second Brain and 1Browser AI.'
+						demo={<RemixDemo />}
 					/>
 				</div>
 			</div>

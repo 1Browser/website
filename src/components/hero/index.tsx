@@ -11,7 +11,8 @@ export const Hero: React.FC = () => {
 		<section className="relative min-h-screen overflow-x-hidden">
 			<div className="container mx-auto px-6 py-24 mt-4 md:mt-24 relative z-10">
 				<div className="flex flex-col items-center text-center">
-					<m.h1
+					<ComingSoon />
+					<m.div
 						className="text-5xl md:text-8xl font-extrabold mb-6"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -67,7 +68,7 @@ export const Hero: React.FC = () => {
 							</span>
 							n 1Browser
 						</span>
-					</m.h1>
+					</m.div>
 					<m.div
 						className="text-md md:text-2xl text-foreground mb-12 max-w-3xl my-8"
 						initial={{ opacity: 0, y: 20 }}
@@ -267,4 +268,30 @@ function getShapePath(shape: string, color: string): JSX.Element {
 		default:
 			return <rect x="10" y="10" width="80" height="80" {...commonProps} />;
 	}
+}
+
+import { ChevronRight } from "lucide-react";
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+
+function ComingSoon() {
+	return (
+		<m.div
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8, delay: 0.1 }}
+			className="z-10 flex items-center justify-center my-4"
+		>
+			<AnimatedGradientText>
+				✨ <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+				<span
+					className={cn(
+						`inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+					)}
+				>
+					Coming Soon
+				</span>
+				<ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+			</AnimatedGradientText>
+		</m.div>
+	);
 }

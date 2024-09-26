@@ -70,7 +70,7 @@ export function AiAgentsDemo() {
 
 	const content = (
 		<div className="w-[calc(100%-310px)] h-[500px] flex flex-col justify-center items-center overflow-hidden p-2 bg-background">
-			<AnimatePresence mode="wait">
+			<AnimatePresence mode="popLayout">
 				{step === 0 && (
 					<m.div
 						key="welcome"

@@ -9,7 +9,7 @@ export function BentoCard({
 	demo,
 	className = "",
 }: {
-	title: string;
+	title: string | React.ReactNode;
 	description: string;
 	demo?: React.ReactNode;
 	className?: string;
@@ -29,9 +29,9 @@ export function BentoCard({
 					<div className="mb-4 flex justify-center items-center">{demo}</div>
 				)}
 				<div>
-					<h3 className="text-4xl font-semibold text-foreground mb-2">
+					<div className="text-4xl font-semibold text-foreground mb-2">
 						{title}
-					</h3>
+					</div>
 					<p className="text-secondary-foreground">{description}</p>
 				</div>
 			</div>

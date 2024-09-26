@@ -1,14 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/components/ui/popover";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { AnimatePresence, m } from "framer-motion";
 
 export function BrowserFrame({
 	defaultUrl = "https://example.com",
@@ -25,6 +21,7 @@ export function BrowserFrame({
 }) {
 	const [isDidCardOpen, setIsDidCardOpen] = useState(false);
 	const browserFrameRef = useRef<HTMLDivElement>(null);
+	const didCardRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (!enableDidCard || !browserFrameRef.current) return;
@@ -38,7 +35,7 @@ export function BrowserFrame({
 				}
 			},
 			{
-				threshold: 0.5, // 50% of the component is visible
+				threshold: 1, // 100% of the component is visible
 			}
 		);
 
@@ -72,32 +69,39 @@ export function BrowserFrame({
 							disabled
 						/>
 						{enableDidCard && (
-							<Popover open={isDidCardOpen}>
-								<PopoverTrigger asChild>
-									<button
-										className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-200"
-										onClick={() => {
-											setIsDidCardOpen((v) => !v);
-										}}
+							<>
+								<button
+									className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-200"
+									onClick={() => setIsDidCardOpen(!isDidCardOpen)}
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										className="h-5 w-5"
+										viewBox="0 0 20 20"
+										fill="currentColor"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											className="h-5 w-5"
-											viewBox="0 0 20 20"
-											fill="currentColor"
+										<path
+											fillRule="evenodd"
+											d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+											clipRule="evenodd"
+										/>
+									</svg>
+								</button>
+								<AnimatePresence>
+									{isDidCardOpen && (
+										<m.div
+											initial={{ opacity: 0, y: 10 }}
+											animate={{ opacity: 1, y: 0 }}
+											exit={{ opacity: 0, y: 10 }}
+											transition={{ duration: 0.3 }}
+											ref={didCardRef}
+											className="absolute right-0 mt-2 w-80 z-10"
 										>
-											<path
-												fillRule="evenodd"
-												d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-												clipRule="evenodd"
-											/>
-										</svg>
-									</button>
-								</PopoverTrigger>
-								<PopoverContent className="w-80">
-									<DidCard />
-								</PopoverContent>
-							</Popover>
+											<DidCard />
+										</m.div>
+									)}
+								</AnimatePresence>
+							</>
 						)}
 					</div>
 				</div>

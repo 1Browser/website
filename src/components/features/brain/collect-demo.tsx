@@ -59,7 +59,7 @@ export function CollectDemo() {
 			defaultUrl={currentUrl}
 			content={
 				<div className="w-full h-[500px] bg-gradient-to-br from-gray-900 to-blue-900 text-foreground p-4 rounded-lg shadow-2xl relative overflow-hidden">
-					<AnimatePresence mode="wait">
+					<AnimatePresence mode="popLayout">
 						{step === 0 && <BrowsingContent key="browsing" />}
 						{step === 1 && <CollectingContent key="text" type="text" />}
 						{step === 2 && <CollectingContent key="image" type="image" />}

@@ -85,7 +85,7 @@ export function AskAIDemo() {
 			content={
 				<div className="w-full h-[600px] bg-gradient-to-br from-gray-900 to-purple-900 text-foreground p-6 rounded-lg shadow-2xl relative overflow-hidden">
 					<CollectedItems />
-					<AnimatePresence mode="wait">
+					<AnimatePresence mode="popLayout">
 						{step === 0 && <QueryInput key="input" query={query} />}
 						{step === 1 && <QueryInput key="input" query={query} />}
 						{step === 2 && <AIProcessing key="processing" />}

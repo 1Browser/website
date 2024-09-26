@@ -1,5 +1,6 @@
 import { Logo } from "../logo";
 import { NeonGradientCard } from "../magicui/neon-gradient-card";
+import TextReveal from "@/components/magicui/text-reveal";
 
 export function Manifesto() {
 	return (
@@ -10,7 +11,17 @@ export function Manifesto() {
 				Manifesto
 			</h2>
 			<div className="text-[2rem] flex flex-col gap-5">
-				<p>
+				<TextReveal
+					text={[
+						"In a world where our digital lives are fragmented and exploited, 1Browser stands as a beacon of freedom.",
+						"We've been captives in our own digital realm – bound by algorithms, tracked by corporations, and scattered across platforms.",
+						"No more.",
+						"1Browser is your digital sanctuary. It's where your online experience is truly yours. Where your thoughts are protected, your discoveries are personal, and your browsing is liberated.",
+						"Reclaim your digital self. Welcome to 1Browser.",
+					]}
+				/>
+
+				{/* <p>
 					<span className="font-bold text-[4rem] italic">In</span> a world where
 					our digital lives are fragmented and exploited, 1Browser stands as a
 					beacon of freedom.
@@ -25,7 +36,7 @@ export function Manifesto() {
 					is truly yours. Where your thoughts are protected, your discoveries
 					are personal, and your browsing is liberated.
 				</p>
-				<p>Reclaim your digital self. Welcome to 1Browser.</p>
+				<p>Reclaim your digital self. Welcome to 1Browser.</p> */}
 
 				<NeonGradientCard className="flex flex-col mx-auto max-w-sm items-center justify-center text-center my-10">
 					<div className="flex flex-col justify-center items-center gap-5 my-5">
