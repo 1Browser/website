@@ -34,53 +34,52 @@ const userContent = [
 	{
 		id: 1,
 		content:
-			"1browser is a new browser that is built on the open web. It's really cool.",
+			"1Browser is a new browser that is built on the open web. It's really cool. Recommend. 10/10",
 	},
 	{
 		id: 2,
 		content:
-			"Many users are using 1browser to browse the web. The AI features really helps them to be more productive.",
+			"The AI features really helps me to be more productive. I love it.",
 	},
-	// generate more, be creative
 	{
 		id: 3,
 		content:
-			"The AI-powered content suggestions in 1browser have revolutionized how users discover new information.",
+			"I believe Privacy-conscious users will really appreciate 1Browser's built-in security features and transparent data practices.",
 	},
 	{
 		id: 4,
 		content:
-			"1browser's seamless tab management has significantly reduced digital clutter for its users.",
+			"1Browser's seamless tab management has significantly reduced digital clutter for our users.",
 	},
 	{
 		id: 5,
 		content:
-			"Privacy-conscious users appreciate 1browser's built-in security features and transparent data practices.",
+			"The AI-powered content suggestions in 1Browser have revolutionized how users discover new information.",
 	},
 	{
 		id: 6,
 		content:
-			"The integration of AI writing assistance in 1browser has boosted user productivity in composing emails and documents.",
+			"The integration of AI writing assistance in 1Browser has boosted user productivity in composing emails and documents.",
 	},
 	{
 		id: 7,
 		content:
-			"1browser's voice search capability has made web navigation more accessible and convenient for all users.",
+			"1Browser's voice search capability has made web navigation more accessible and convenient for all users.",
 	},
 	{
 		id: 8,
 		content:
-			"The customizable AI dashboard in 1browser allows users to tailor their browsing experience to their specific needs.",
+			"The customizable AI dashboard in 1Browser allows users to tailor their browsing experience to their specific needs.",
 	},
 	{
 		id: 9,
 		content:
-			"1browser's AI-driven ad blocker has significantly improved page load times and overall browsing experience.",
+			"1Browser's AI-driven ad blocker has significantly improved page load times and overall browsing experience.",
 	},
 	{
 		id: 10,
 		content:
-			"Users report that 1browser's AI-powered language translation feature has made international browsing seamless.",
+			"Users report that 1Browser's AI-powered language translation feature has made international browsing seamless.",
 	},
 ];
 

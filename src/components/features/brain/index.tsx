@@ -14,14 +14,14 @@ export function FeatureBrain() {
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title="Clip and Collect"
-						description='Clip and collect anything on the internet. Put them in your powerful "second brain".'
+						description='Clip and collect anything on the internet. Store it in your powerful "second brain".'
 						demo={<CollectDemo />}
 					/>
 				</div>
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title="Second Brain"
-						description="A powerful second brain that helps you organize your life. No more messy notes, bookmarks, or drafts. Collect and leave. Forget something? Just ask."
+						description="Your true brain extension that helps you organized. No more messy notes, bookmarks, or drafts. Forget something? Just ask."
 						demo={<SecondBrainDemo />}
 					/>
 				</div>
@@ -29,12 +29,12 @@ export function FeatureBrain() {
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title="Integrated with All Platforms"
-						description="You can collect anything from anywhere and it will be saved to your second brain. Even without proactively collecting, everything you browse is saved to your second brain."
+						description="Collect freely without platform restrictions. Information flows seamlessly—just follow your intuition. Everything is in your second brain."
 						demo={<CloudDemo />}
 					/>
 					<BentoCard
 						title="Ask the Brain"
-						description="Ask anything about your browsing or collecting history and the AI will answer you. So that's why it's called a second brain."
+						description="Ask anything about your browsing or collecting history and the AI will answer you. So that's why it's called a real second brain."
 						demo={<AskAIDemo />}
 					/>
 				</div>

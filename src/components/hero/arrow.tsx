@@ -69,7 +69,7 @@ export const Arrow: React.FC = () => {
 					transition={{ delay: 3, duration: 1, type: "spring" }}
 					className="text-2xl italic w-[350px] text-center"
 				>
-					for open and intelligent <br /> information consumption
+					for open and intelligent <br /> information era
 				</m.p>
 			</div>
 		</div>

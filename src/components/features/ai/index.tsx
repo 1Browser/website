@@ -13,8 +13,8 @@ export function FeatureAi() {
 			<div className="flex flex-col gap-5">
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
-						title="Smart Reading Companion"
-						description="AI lives in the browser sidebar. Always there. It beautifully summarizes the webpage and extracts the key points for you."
+						title="Reading = Absorbing"
+						description="Content is summarized, and mind maps are visually presented. You can interactively query any information on the web, all powered by AI."
 						demo={<FeatureAiSummaryDemo />}
 					/>
 				</div>
@@ -30,12 +30,14 @@ export function FeatureAi() {
 				<div className="flex flex-col md:flex-row gap-4">
 					<BentoCard
 						title="AI Agents"
-						description="Let AI Agents do the work for you. Scrape the internet, analyze the data, and even create content for you. Interacting with the internet was never this easy."
+						description="Scrape the internet, analyze the data, and even create content for you. Not just meeting your expectations, but anticipating them.
+												Interacting with the internet was never been this effortless."
 						demo={<AiAgentsDemo />}
 					/>
 					<BentoCard
 						title="Decentralized Computing"
-						description="No more cloud computing. Your data is yours. We don't even have a server. We use the power of the browser(s) to run our AI models. You are also sharing the computing power with other users. It's a win-win."
+						description="AI doesn’t mean compromising on privacy.
+We leverage distributed computing power to support our AI models. You can even share your own computing power with others—creating a true win-win situation."
 						demo={<DecentralizedComputingDemo />}
 					/>
 				</div>

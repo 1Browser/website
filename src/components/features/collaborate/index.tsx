@@ -12,7 +12,7 @@ export function FeatureCollaborate() {
 				<div className="flex flex-col gap-4 md:flex-row">
 					<BentoCard
 						title="Highlight and Annotate"
-						description="Highlight and annotate the text on the page. Come back and review the annotations later. It's like having an accessible notebook for the internet. You can also collaborate with others. Imagine an internet of thoughts, free speech, and ideas."
+						description="Highlight as you browse. Comment alongside content wherever you want, joining and join communities as they emerge. Imagine an internet filled with free thoughts, open speech and boundless ideas."
 						demo={<AnnotationDemo />}
 					/>
 				</div>
