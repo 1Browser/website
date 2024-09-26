@@ -176,6 +176,7 @@ export function DecentralizedComputingDemo() {
 				className="bg-gradient-to-br from-gray-900 to-gray-800 pointer-events-none"
 				panOnScroll={false}
 				panOnDrag={false}
+				zoomOnScroll={false}
 			>
 				<Background
 					color="#4F46E5"

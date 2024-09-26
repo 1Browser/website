@@ -160,6 +160,9 @@ export function WebXDemoZen() {
 							edges={edges}
 							fitView
 							className="bg-gray-900"
+							zoomOnScroll={false}
+							panOnScroll={false}
+							panOnDrag={false}
 						>
 							<Background color="#6366f1" variant={BackgroundVariant.Dots} />
 							<Controls className="bg-gray-800 text-white" />

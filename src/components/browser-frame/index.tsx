@@ -108,11 +108,11 @@ export function BrowserFrame({
 			</div>
 
 			{/* Browser content */}
-			<div className="flex h-[calc(100%-3rem)] relative">
+			<div className="flex w-full h-[calc(100%-3rem)] relative">
 				{content}
 				{sidePanel && (
 					<div
-						className="bg-gray-800 border-l border-gray-700 overflow-auto min-w-[200px]"
+						className="bg-gray-800 border-l border-gray-700 overflow-auto min-w-[300px]"
 						style={{ width: sidePanelWidth }}
 					>
 						{sidePanel}

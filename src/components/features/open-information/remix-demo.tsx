@@ -289,7 +289,12 @@ export function RemixDemo() {
 								<m.button
 									key={option.name}
 									ref={option.name === "Telegram" ? telegramButtonRef : null}
-									className={`${option.color} text-white p-3 rounded-full shadow-lg hover:opacity-80 transition-opacity`}
+									className={cn(
+										`${option.color} text-white p-3 rounded-full shadow-lg hover:opacity-80 transition-opacity`,
+										isClicking && option.name === "Telegram"
+											? "animate-pulse opacity-50"
+											: ""
+									)}
 									whileHover={{ scale: 1.1 }}
 									whileTap={{ scale: 0.95 }}
 									initial={{ opacity: 0, y: 20 }}

@@ -37,7 +37,6 @@ export function FeatureAiSummaryDemo() {
 			sidePanelWidth={500}
 			sidePanel={
 				<div className="h-[800px] p-6 text-white bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 rounded-lg shadow-lg overflow-hidden relative">
-					<div className="absolute inset-0 bg-[url('/path/to/futuristic-pattern.svg')] opacity-10"></div>
 					<div className="relative z-10 h-full flex flex-col">
 						<div className="flex items-center">
 							<h2 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center">
