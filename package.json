@@ -6,7 +6,8 @@
     "dev": "next dev -p 3011",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@img-comparison-slider/react": "^8.0.2",
@@ -27,6 +28,7 @@
     "react-dom": "^18.3.1",
     "react-icon-cloud": "^4.1.4",
     "react-responsive-masonry": "^2.3.0",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
