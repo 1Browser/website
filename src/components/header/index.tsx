@@ -79,8 +79,8 @@ export function Header() {
 								</Link>
 							</li>
 							<li>
-								<Link href="/about" className="hover:underline">
-									About
+								<Link href="/deck" className="hover:underline">
+									Deck
 								</Link>
 							</li>
 							<li>
